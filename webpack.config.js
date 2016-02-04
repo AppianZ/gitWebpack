@@ -3,6 +3,7 @@
  */
 var path = require('path');
 var webpack = require('webpack');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
     devServer: {
@@ -17,11 +18,6 @@ module.exports = {
         index : './test/index.js'
     },
     plugins : [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
     ],
     output : {
         path :  path.join(__dirname,'dist'),
@@ -29,11 +25,33 @@ module.exports = {
     },
     module : {
         loaders :[{
-                test : '/\.css$/',
-                loader :'style!css'
+                test: /\.css$/,
+                include: path.resolve('./test'),
+                loader: 'style!css',
+            }, {
+                test: /\.js$/,
+                include: path.resolve('./test'),
+                loader: 'babel',
             }, {
                 test: /\.(png|jpg)$/,
                 loader: 'url'
             }]
     }
+}
+console.log('当前环境为' + process.env.NODE_ENV);
+if (process.env.NODE_ENV == 'production'){
+    console.log("现在是生产环境，build后~");
+    module.exports.plugins = (module.exports.plugins).concat([
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ])
+}else {
+    module.exports.plugins = (module.exports.plugins).concat([
+        new OpenBrowserPlugin({
+            url: 'http://localhost:8200'
+        })
+    ])
 }

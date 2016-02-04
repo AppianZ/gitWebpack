@@ -1,9 +1,9 @@
 .red {
-    color:  teal;
+    color: #efefef;
 }
 #box2 {
     height: 300px;
     width: 300px;
-    border: 1px solid red;
+    border: 1px solid rgb(255,0,0);
     background: url('./img1.jpg');
 }
