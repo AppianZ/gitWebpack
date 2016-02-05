@@ -19,7 +19,7 @@ console.log(arr2);
 */
 
 
-const arr=["str1",'str2','str3'];
+/*const arr=["str1",'str2','str3'];
 const arr2=[...arr,'str4'];
 import Vue from 'vue'
 new Vue({
@@ -28,4 +28,4 @@ new Vue({
         test:"haha"
     }
 })
-console.log(arr2);
+console.log(arr2);*/
