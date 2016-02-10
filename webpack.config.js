@@ -40,7 +40,6 @@ module.exports = {
 }
 console.log('当前环境为' + process.env.NODE_ENV);
 if (process.env.NODE_ENV == 'production'){
-    console.log("现在是生产环境，build后~");
     module.exports.plugins = (module.exports.plugins).concat([
         new webpack.optimize.UglifyJsPlugin({
             compress: {
