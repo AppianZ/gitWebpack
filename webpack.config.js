@@ -15,7 +15,8 @@ module.exports = {
         port: 8200
     },
     entry : {
-        index : './test/index.js'
+        index : './test/index.js',
+        multiplication : './multiplication/index.js'
     },
     plugins : [
     ],
@@ -27,11 +28,11 @@ module.exports = {
         loaders :[{
                 test: /\.css$/,
                 include: path.resolve('./test'),
-                loader: 'style!css',
+                loader: 'style!css'
             }, {
                 test: /\.js$/,
                 include: path.resolve('./test'),
-                loader: 'babel',
+                loader: 'babel'
             }, {
                 test: /\.(png|jpg)$/,
                 loader: 'url'
