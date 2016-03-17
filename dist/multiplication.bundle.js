@@ -47,8 +47,7 @@
 	/**
 	 * Created by JW on 2016/3/17.
 	 */
-	/*
-	import Vue from 'vue';
+	/*import Vue from 'vue';
 
 	const firstValueArr = [];
 	const secondValueArr = [];
@@ -66,8 +65,7 @@
 	        console.log(firstValueArr);
 	        console.log(secondValueArr);
 	    }
-	});
-	*/
+	});*/
 
 
 /***/ }
